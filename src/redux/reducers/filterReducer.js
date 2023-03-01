@@ -11,6 +11,17 @@ const initialState = {
 const filterReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_BRAND:
+      if (state.filters.brands.includes(action.payload)) {
+        return {
+          ...state,
+          filters: {
+            ...state.filters,
+            brands: state.filters.brands.filter(
+              (brand) => brand !== action.payload
+            ),
+          },
+        };
+      }
       return {
         ...state,
         filters: {
