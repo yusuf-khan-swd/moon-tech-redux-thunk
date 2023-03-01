@@ -25,13 +25,13 @@ const Home = () => {
         </button>
         <button
           className={`border px-3 py-2 rounded-full font-semibold`}
-          onClick={() => dispatch(toggleBrand("AMD"))}
+          onClick={() => dispatch(toggleBrand("amd"))}
         >
           AMD
         </button>
         <button
           className={`border px-3 py-2 rounded-full font-semibold`}
-          onClick={() => dispatch(toggleBrand("INTEL"))}
+          onClick={() => dispatch(toggleBrand("intel"))}
         >
           Intel
         </button>
