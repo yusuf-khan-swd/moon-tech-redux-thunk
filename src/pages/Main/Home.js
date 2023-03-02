@@ -25,9 +25,10 @@ const Home = () => {
     ));
   }
 
-  if (products.length && stock) {
+  if (products.length && (stock || brands.length)) {
     content = products
       .filter((product) => product.status === true)
+      .filter((product) => brands.includes(product.brand))
       .map((product) => <ProductCard key={product.model} product={product} />);
   }
 
@@ -51,7 +52,7 @@ const Home = () => {
           AMD
         </button>
         <button
-          className={`border px-3 py-2 rounded-full font-semibold${
+          className={`border px-3 py-2 rounded-full font-semibold ${
             brands.includes("intel") ? activeClass : null
           }`}
           onClick={() => dispatch(toggleBrand("intel"))}
